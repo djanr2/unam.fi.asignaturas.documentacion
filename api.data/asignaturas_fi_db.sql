@@ -5,7 +5,7 @@
 -- Dumped from database version 12.1
 -- Dumped by pg_dump version 12.1
 
--- Started on 2021-11-18 19:07:40
+-- Started on 2022-02-21 00:06:28
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -59,7 +59,7 @@ CREATE SEQUENCE public."Acceso_id_seq"
 ALTER TABLE public."Acceso_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 2981 (class 0 OID 0)
+-- TOC entry 2993 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: Acceso_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -99,7 +99,7 @@ CREATE SEQUENCE public."Access_token_id_seq"
 ALTER TABLE public."Access_token_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 2982 (class 0 OID 0)
+-- TOC entry 2994 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: Access_token_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -137,7 +137,7 @@ CREATE SEQUENCE public."Agrupacion_id_seq"
 ALTER TABLE public."Agrupacion_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 2983 (class 0 OID 0)
+-- TOC entry 2995 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: Agrupacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -186,7 +186,7 @@ CREATE SEQUENCE public."Asignatura_id_seq"
 ALTER TABLE public."Asignatura_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 2984 (class 0 OID 0)
+-- TOC entry 2996 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: Asignatura_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -226,7 +226,7 @@ CREATE SEQUENCE public."Carrera_id_seq"
 ALTER TABLE public."Carrera_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 2985 (class 0 OID 0)
+-- TOC entry 2997 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: Carrera_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -265,7 +265,7 @@ CREATE SEQUENCE public."Estado_id_seq"
 ALTER TABLE public."Estado_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 2986 (class 0 OID 0)
+-- TOC entry 2998 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: Estado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -304,7 +304,7 @@ CREATE SEQUENCE public."Rol_acceso_id_seq"
 ALTER TABLE public."Rol_acceso_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 2987 (class 0 OID 0)
+-- TOC entry 2999 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: Rol_acceso_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -344,12 +344,52 @@ CREATE SEQUENCE public."Seriacion_id_seq"
 ALTER TABLE public."Seriacion_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 2988 (class 0 OID 0)
+-- TOC entry 3000 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: Seriacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public."Seriacion_id_seq" OWNED BY public.seriacion.id;
+
+
+--
+-- TOC entry 226 (class 1259 OID 49572)
+-- Name: nota_mapa; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.nota_mapa (
+    id bigint NOT NULL,
+    carrera bigint NOT NULL,
+    orden numeric(2,0),
+    simbolo character varying(15),
+    leyenda text
+);
+
+
+ALTER TABLE public.nota_mapa OWNER TO postgres;
+
+--
+-- TOC entry 227 (class 1259 OID 49576)
+-- Name: nota_mapa_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.nota_mapa_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.nota_mapa_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3001 (class 0 OID 0)
+-- Dependencies: 227
+-- Name: nota_mapa_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.nota_mapa_id_seq OWNED BY public.nota_mapa.id;
 
 
 --
@@ -383,7 +423,7 @@ CREATE SEQUENCE public.optativa_asignatura_id_seq
 ALTER TABLE public.optativa_asignatura_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2989 (class 0 OID 0)
+-- TOC entry 3002 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: optativa_asignatura_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -425,7 +465,7 @@ CREATE SEQUENCE public.optativa_categoria_id_seq
 ALTER TABLE public.optativa_categoria_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2990 (class 0 OID 0)
+-- TOC entry 3003 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: optativa_categoria_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -467,7 +507,7 @@ CREATE SEQUENCE public.optativa_container_id_seq
 ALTER TABLE public.optativa_container_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2991 (class 0 OID 0)
+-- TOC entry 3004 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: optativa_container_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -509,7 +549,7 @@ CREATE SEQUENCE public.optativa_tabla_id_seq
 ALTER TABLE public.optativa_tabla_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2992 (class 0 OID 0)
+-- TOC entry 3005 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: optativa_tabla_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -518,7 +558,7 @@ ALTER SEQUENCE public.optativa_tabla_id_seq OWNED BY public.optativa_tabla.id;
 
 
 --
--- TOC entry 2764 (class 2604 OID 24799)
+-- TOC entry 2771 (class 2604 OID 24799)
 -- Name: acceso id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -526,7 +566,7 @@ ALTER TABLE ONLY public.acceso ALTER COLUMN id SET DEFAULT nextval('public."Acce
 
 
 --
--- TOC entry 2767 (class 2604 OID 24846)
+-- TOC entry 2774 (class 2604 OID 24846)
 -- Name: acceso_token id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -534,7 +574,7 @@ ALTER TABLE ONLY public.acceso_token ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
--- TOC entry 2761 (class 2604 OID 16407)
+-- TOC entry 2768 (class 2604 OID 16407)
 -- Name: agrupacion id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -542,7 +582,7 @@ ALTER TABLE ONLY public.agrupacion ALTER COLUMN id SET DEFAULT nextval('public."
 
 
 --
--- TOC entry 2762 (class 2604 OID 16415)
+-- TOC entry 2769 (class 2604 OID 16415)
 -- Name: asignatura id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -550,7 +590,7 @@ ALTER TABLE ONLY public.asignatura ALTER COLUMN id SET DEFAULT nextval('public."
 
 
 --
--- TOC entry 2760 (class 2604 OID 16399)
+-- TOC entry 2767 (class 2604 OID 16399)
 -- Name: carrera id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -558,7 +598,7 @@ ALTER TABLE ONLY public.carrera ALTER COLUMN id SET DEFAULT nextval('public."Car
 
 
 --
--- TOC entry 2766 (class 2604 OID 24821)
+-- TOC entry 2773 (class 2604 OID 24821)
 -- Name: estado id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -566,7 +606,15 @@ ALTER TABLE ONLY public.estado ALTER COLUMN id SET DEFAULT nextval('public."Esta
 
 
 --
--- TOC entry 2780 (class 2604 OID 41324)
+-- TOC entry 2788 (class 2604 OID 49578)
+-- Name: nota_mapa id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.nota_mapa ALTER COLUMN id SET DEFAULT nextval('public.nota_mapa_id_seq'::regclass);
+
+
+--
+-- TOC entry 2787 (class 2604 OID 41324)
 -- Name: optativa_asignatura id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -574,7 +622,7 @@ ALTER TABLE ONLY public.optativa_asignatura ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 2772 (class 2604 OID 41290)
+-- TOC entry 2779 (class 2604 OID 41290)
 -- Name: optativa_categoria id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -582,7 +630,7 @@ ALTER TABLE ONLY public.optativa_categoria ALTER COLUMN id SET DEFAULT nextval('
 
 
 --
--- TOC entry 2768 (class 2604 OID 41268)
+-- TOC entry 2775 (class 2604 OID 41268)
 -- Name: optativa_container id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -590,7 +638,7 @@ ALTER TABLE ONLY public.optativa_container ALTER COLUMN id SET DEFAULT nextval('
 
 
 --
--- TOC entry 2776 (class 2604 OID 41307)
+-- TOC entry 2783 (class 2604 OID 41307)
 -- Name: optativa_tabla id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -598,7 +646,7 @@ ALTER TABLE ONLY public.optativa_tabla ALTER COLUMN id SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 2765 (class 2604 OID 24810)
+-- TOC entry 2772 (class 2604 OID 24810)
 -- Name: rol_acceso id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -606,7 +654,7 @@ ALTER TABLE ONLY public.rol_acceso ALTER COLUMN id SET DEFAULT nextval('public."
 
 
 --
--- TOC entry 2763 (class 2604 OID 16423)
+-- TOC entry 2770 (class 2604 OID 16423)
 -- Name: seriacion id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -614,7 +662,7 @@ ALTER TABLE ONLY public.seriacion ALTER COLUMN id SET DEFAULT nextval('public."S
 
 
 --
--- TOC entry 2961 (class 0 OID 24796)
+-- TOC entry 2971 (class 0 OID 24796)
 -- Dependencies: 211
 -- Data for Name: acceso; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -628,7 +676,7 @@ COPY public.acceso (id, date_creacion, date_actualizacion, usuario, mail, passwo
 
 
 --
--- TOC entry 2967 (class 0 OID 24843)
+-- TOC entry 2977 (class 0 OID 24843)
 -- Dependencies: 217
 -- Data for Name: acceso_token; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -639,7 +687,7 @@ COPY public.acceso_token (id, usuario, token, created, lifespan) FROM stdin;
 
 
 --
--- TOC entry 2955 (class 0 OID 16404)
+-- TOC entry 2965 (class 0 OID 16404)
 -- Dependencies: 205
 -- Data for Name: agrupacion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -722,7 +770,7 @@ COPY public.agrupacion (id, agrupacion, nombre) FROM stdin;
 
 
 --
--- TOC entry 2957 (class 0 OID 16412)
+-- TOC entry 2967 (class 0 OID 16412)
 -- Dependencies: 207
 -- Data for Name: asignatura; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -857,7 +905,6 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 7072	1436	13	Probabilidad	0.0	4.0	4	3			AMARILLO	1		#ffff00
 7078	1569	13	Estadística	0.0	4.0	5	3			AMARILLO	1		#ffff00
 6594	1569	8	Estadística	0.0	4.0	5	1			AMARILLO	1		#ffff00
-57	1120	1	Álgebra	0.0	4.0	1	1			AMARILLO	1		#ffff00
 58	1121	1	Cálculo y Geometría Analítica	0.0	6.0	1	2			AMARILLO	1		#ffff00
 62	1220	1	Álgebra Lineal	0.0	4.0	2	1			AMARILLO	1		#ffff00
 63	1221	1	Cálculo Integral	0.0	4.0	2	2			AMARILLO	1		#ffff00
@@ -906,7 +953,6 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 6421	2817	6	Prospección Sísmica II	0.0	4.0	8	2			AZUL	1		#0000ff
 6426	2966	6	Inersion de Datos Geofísicos	0.0	4.0	9	2			AZUL	1		#0000ff
 189	0	1	Se deberán cursar al menos 18 creditos optativos de una de las seis áreas	18.0	0.0	10	2		OPT_1	AZUL	2		#0000ff
-190	0	1	Se deberán cursar al menos 12 creditos optativos de una o dos de las cinco áreas restantes	12.0	0.0	10	4		OPT_1	AZUL	2		#0000ff
 6044	0	2	Optativa	0.0	4.0	10	3		OPT_1	AZUL	1		#0000ff
 6045	0	2	Optativa	0.0	4.0	10	4		OPT_1	AZUL	1		#0000ff
 6104	0	3	Asignatura del Campo de Profundización	0.0	4.0	9	1		OPT_1	AZUL	1		#0000ff
@@ -923,6 +969,7 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 6229	0	4	Optativa(s) de Ciencias Sociales y Humanidades	2.0	2.0	8	1		OPT_1	VERDE	1		#32cd32
 152	0	1	Optativa de Ciencias Sociales y Humanidades	0.0	2.0	8	7		OPT_1	VERDE	1		#32cd32
 133	1413	1	Introducción a la Economía	0.0	4.0	5	6			VERDE	1		#32cd32
+190	0	1	Se deberán cursar al menos 12 creditos optativos de una o dos de las cinco áreas restantes	12.0	0.0	10	3		OPT_1	AZUL	2		#0000ff
 7135	1786	13	Planeación y Control de Recursos Hospitalarios	2.0	4.0	8	8	L	OPT	BIOMECANICA_SB	0		
 7136	1699	13	Sistemas de Medición y Transductores Médicos	2.0	4.0	8	9	L	OPT	BIOMECANICA_SB	0		
 6348	2305	5	Temas Selectos de Normalización y Desarrollo Industrial	0.0	3.0	8, 9	6		OPT	ESPACIALES	0		
@@ -941,6 +988,7 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 6302	1453	5	Sistemas Digitales	2.0	3.0	4	6			CYAN	1		#00ffff
 6289	1227	5	Estructura de Datos y Algoritmos I	2.0	4.0	2	5	L		NARANJA	1		#ff8c00
 6419	0	6	Optativa de Otras Asignaturas Convenientes	0.0	2.0	7	6		OPT_1	NARANJA	1		#ff8c00
+57	1120	1	Álgebra	0.0	4.0	1	1			AMARILLO	1	algebra.pdf	#ffff00
 6352	2304	5	Proyecto de Investigación para Telecomunicaciones	0.0	3.0	8, 9	3		OPT	RADIOCOMUNICACION	0		
 6353	2055	5	Radiodifusión	0.0	3.0	8, 9	4		OPT	RADIOCOMUNICACION	0		
 6354	2309	5	Redes Embebidas Inalámbricas	0.0	3.0	8, 9	5		OPT	RADIOCOMUNICACION	0		
@@ -1966,13 +2014,13 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 59	1128	1	Representaciones Gráficas	4.0	2.0	1	3	P		NARANJA	1		#ff8c00
 60	1127	1	Programación Básica	2.0	2.0	1	4	P		NARANJA	1		#ff8c00
 6082	944	3	Costos y Evaluación de Proyectos	2.0	2.0	4	5			NARANJA	1		#ff8c00
+7299	2916	1	Integración de Proyectos	2.0	1.0	10	5			AZUL	1		#0000ff
 7061	1225	13	Manufactura I	4.0	2.0	2	4	L+		AZUL	1		#0000ff
 7213	2611	14	Evaluación de la Calidad del Agua	2.0	3.0	6	5	L+		AZUL	1		#0000ff
 6597	3021	8	Metodologías para la Planeación	2.0	2.0	5	4	P		AZUL	1		#0000ff
 6598	1225	8	Manufactura I	4.0	2.0	5	5	L+		AZUL	1		#0000ff
 6603	507	8	Ingeniería de Manufactura	2.0	4.0	6	4	L+		AZUL	1		#0000ff
 6609	619	8	Planeación y Control de la Producción	2.0	4.0	7	4	L		AZUL	1		#0000ff
-7299	2916	1	Integración de Proyectos	2.0	1.0	10	7			AZUL	1		#0000ff
 6618	572	8	Automatización Industrial	4.0	2.0	9	1	L		AZUL	1		#0000ff
 6621	2917	8	Prácticas Profesionales para Ingeniería Industrial	12.0	0.0	9	4	P+		AZUL	1		#0000ff
 6628	2919	8	Análisis y Mejora de Procesos	2.0	2.0	10	6	P		AZUL	1		#0000ff
@@ -2137,7 +2185,7 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 6694	0	9	Optativa de Ciencias Sociales y Humanidades	0.0	2.0	4	6		OPT_1	VERDE	1		#32cd32
 6389	1222	6	Cultura y Comunicación	2.0	0.0	2	6			VERDE	1		#32cd32
 6388	1067	6	Geometría Descriptiva Aplicada	2.0	2.0	2	5			NARANJA	1		#ff8c00
-5940	1789	1	Ciencia, Tecnología y Sociedad	0.0	2.0	4, 8	1		OPT	CSYH	0		
+5940	1789	1	Ciencia, Tecnología y Sociedad	0.0	2.0	4, 8	1		OPT	CSYH	0	ciencia_tecnologia_y_sociedad.pdf	
 5941	1790	1	Introducción al Análisis Económico Empresarial	0.0	2.0	4, 8	2		OPT	CSYH	0		
 5942	1055	1	Literatura Hispanoamericana Contemporanea	0.0	3.0	4, 8	3		OPT	CSYH	0		
 5943	1791	1	México Nación Multicultural	0.0	2.0	4, 8	4		OPT	CSYH	0		
@@ -2247,7 +2295,6 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 149	152	1	Cimentaciones	0.0	4.5	8	4			AZUL	1		#0000ff
 150	234	1	Edificación	0.0	3.0	8	5			AZUL	1		#0000ff
 151	2803	1	Ingeniería de Tránsito	0.0	3.0	8	6			AZUL	1		#0000ff
-191	2915	1	Ingeniería del Transporte II	0.0	3.0	10	6			AZUL	1		#0000ff
 6019	1466	2	Prospección y Exploración Minera	0.0	3.0	6	1			AZUL	1		#0000ff
 6028	2088	2	Geotecnia de Excavación	0.0	4.0	7	4			AZUL	1		#0000ff
 6029	1584	2	Geoestadística	0.0	4.0	7	5			AZUL	1		#0000ff
@@ -2275,19 +2322,17 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 6035	2807	2	Administración Aplicada a la Minería	0.0	4.0	8	5			NARANJA	1		#ff8c00
 6041	2959	2	Análisis y Evaluación de Proyectos de Inversión	0.0	4.0	9	5			NARANJA	1		#ff8c00
 6043	2964	2	Gestión de Seguridad e Higiene	0.0	4.0	10	2			NARANJA	1		#ff8c00
+191	2915	1	Ingeniería del Transporte II	0.0	3.0	10	4			AZUL	1		#0000ff
 \.
 
 
 --
--- TOC entry 2953 (class 0 OID 16396)
+-- TOC entry 2963 (class 0 OID 16396)
 -- Dependencies: 203
 -- Data for Name: carrera; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.carrera (id, clave, nombre, year, date_actualizacion) FROM stdin;
-2	108	Ingeniería de Minas y Metalurgia	2016	2020-12-15 14:15:47.772-06
-3	109	Ingeniería Eléctrica Electrónica	2016	2020-12-15 14:15:47.772-06
-4	110	Ingeniería en Computación	2016	2020-12-15 14:15:47.772-06
 5	111	Ingeniería en Telecomunicaciones	2016	2020-12-15 14:15:47.772-06
 6	112	Ingeniería Geofísica	2016	2020-12-15 14:15:47.772-06
 7	113	Ingeniería Geológica	2016	2020-12-15 14:15:47.772-06
@@ -2298,13 +2343,16 @@ COPY public.carrera (id, clave, nombre, year, date_actualizacion) FROM stdin;
 12	125	Ingeniería Geomática	2016	2020-12-15 14:15:47.772-06
 13	135	Ingeniería en Sistemas Biomédicos	2016	2020-12-15 14:15:47.772-06
 14	137	Ingeniería Ambiental	2016	2020-12-15 14:15:47.772-06
-1	107	Ingeniería Civil	2016	2021-01-03 00:30:55.1-06
 16	190	Ingeniería Aeroespacial	2021	2020-12-15 14:15:47.772-06
+2	108	Ingeniería de Minas y Metalurgia	2016	2022-02-16 21:46:48.406-06
+3	109	Ingeniería Eléctrica Electrónica	2016	2022-02-16 21:56:40.574-06
+4	110	Ingeniería en Computación	2016	2022-02-16 22:48:23.485-06
+1	107	Ingeniería Civil	2016	2022-02-16 23:54:25.42-06
 \.
 
 
 --
--- TOC entry 2965 (class 0 OID 24818)
+-- TOC entry 2975 (class 0 OID 24818)
 -- Dependencies: 215
 -- Data for Name: estado; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2318,21 +2366,35 @@ COPY public.estado (id, estado, descripcion) FROM stdin;
 
 
 --
--- TOC entry 2975 (class 0 OID 41321)
+-- TOC entry 2986 (class 0 OID 49572)
+-- Dependencies: 226
+-- Data for Name: nota_mapa; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.nota_mapa (id, carrera, orden, simbolo, leyenda) FROM stdin;
+1	0	1	(L+)	Indica laboratorio por separado
+4	0	2	(L)	Indica laboratorio incluido
+5	0	3	(P+)	Indica prácticas por separado
+6	0	4	(P)	Indica prácticas incluidas
+7	0	5	t	Indica horas teóricas
+8	0	6	p	Indica horas prácticas
+9	0	7	T	Indica total de horas
+10	0	8	-	Indica seriación obligatoria
+11	1	1	1.	PARA CURSAR LA ASIGNATURA DE PROYECTOS Y LAS OPTATIVAS ES REQUISITO CUBRIR AL MENOS 390 CRÉDITOS  DEL PLAN DE ESTUDIOS.
+12	1	2	2.	SE DEBERÁN CURSAR AL MENOS 18 CRÉDITOS DE ASIGNATURAS OPTATIVAS DE UNO DE LOS SEIS CAMPOS DISCIPLINARIOS.
+13	1	3	3.	SE DEBERÁN CURSAR POR LO MENOS 12 CRÉDITOS DE UNA O DOS DE LOS CINCO CAMPOS DISCIPLINARIOS RESTANTES.
+14	1	4	4.	EL ALUMNO DEBERÁ CUBRIR COMO MÍNIMO 6 CRÉDITOS DE ASIGNATURAS OPTATIVAS SOCIOHUMANÍSTICAS. PODRA HACERLO CURSANDO DOS ASIGNATURAS DE 2 Y 4 CRÉDITOS, RESPECTIVAMENTE, COMO LO INDICA EL MAPA CURRICULAR, O BIEN, MEDIANTE OTRAS COMBINACIONES PARA EFECTOS DE LA APLICACION DEL BLOQUE MÓVIL, DEBERÁ CONSIDERARSE LA UBICACIÓN DEL SEMESTRE EN EL QUE SE ENCUENTRA LA SEGUNDA ASIGNATURA OPTATIVA SOCIOHUMANÍSTICA.
+15	1	5	5.	LA NOMENCLATURA (L)  QUE APARECE EN ALGUNAS DE LAS ASIGNATURAS, INDICA HORAS PRÁCTICAS DE LABORATORIO O VISITAS A PROYECTOS DE INGENIERÍA, SIN VALOR EN CRÉDITOS.
+\.
+
+
+--
+-- TOC entry 2985 (class 0 OID 41321)
 -- Dependencies: 225
 -- Data for Name: optativa_asignatura; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.optativa_asignatura (id, tabla, asignatura) FROM stdin;
-1	1	5940
-2	1	5941
-3	1	5942
-4	1	5943
-5	1	5944
-6	1	5945
-7	1	5946
-8	1	5947
-9	1	5948
 10	2	5949
 11	2	5950
 12	2	5951
@@ -2366,7 +2428,6 @@ COPY public.optativa_asignatura (id, tabla, asignatura) FROM stdin;
 40	6	5979
 41	6	5980
 42	6	5981
-43	6	5982
 44	6	5983
 45	7	5984
 46	7	5985
@@ -2375,28 +2436,39 @@ COPY public.optativa_asignatura (id, tabla, asignatura) FROM stdin;
 49	7	5988
 50	7	5989
 51	7	5990
+43	2	5955
+52	2	5955
+67	10	5940
+68	10	5941
+69	10	5942
+70	10	5943
+71	10	5944
+72	10	5945
+73	10	5946
+74	10	5947
+75	10	5948
 \.
 
 
 --
--- TOC entry 2971 (class 0 OID 41287)
+-- TOC entry 2981 (class 0 OID 41287)
 -- Dependencies: 221
 -- Data for Name: optativa_categoria; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.optativa_categoria (id, container, orden, titulo, nota_head, nota_foot) FROM stdin;
-1	1	1	Optativas de Ciencias Sociales y Humanidades		
 2	1	3	Construcción	Nota: asignaturas del plan de Estudios, campos disciplinarios	
 3	1	4	Estructuras		
 4	1	5	Geotecnia		
 5	1	6	Hidráulica		
 6	1	7	Ingeniería Sanitaria y Ambiental		
 7	1	8	Sistemas, Planeación y Transporte		
+15	1	1	Optativas de Ciencias Sociales y Humanidades		
 \.
 
 
 --
--- TOC entry 2969 (class 0 OID 41265)
+-- TOC entry 2979 (class 0 OID 41265)
 -- Dependencies: 219
 -- Data for Name: optativa_container; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2407,24 +2479,24 @@ COPY public.optativa_container (id, carrera, orden, titulo, nota_head, nota_foot
 
 
 --
--- TOC entry 2973 (class 0 OID 41304)
+-- TOC entry 2983 (class 0 OID 41304)
 -- Dependencies: 223
 -- Data for Name: optativa_tabla; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.optativa_tabla (id, categoria, orden, titulo, nota_head, nota_foot) FROM stdin;
-1	1	1			
 2	2	1			
 3	3	1			
 4	4	1			
 5	5	1			
 6	6	1			
 7	7	1			
+10	15	1			
 \.
 
 
 --
--- TOC entry 2963 (class 0 OID 24807)
+-- TOC entry 2973 (class 0 OID 24807)
 -- Dependencies: 213
 -- Data for Name: rol_acceso; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2442,7 +2514,7 @@ COPY public.rol_acceso (id, rol, descripcion) FROM stdin;
 
 
 --
--- TOC entry 2959 (class 0 OID 16420)
+-- TOC entry 2969 (class 0 OID 16420)
 -- Dependencies: 209
 -- Data for Name: seriacion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2488,7 +2560,7 @@ COPY public.seriacion (id, carrera, asignatura, asignatura_seriada, color) FROM 
 
 
 --
--- TOC entry 2993 (class 0 OID 0)
+-- TOC entry 3006 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: Acceso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2497,16 +2569,16 @@ SELECT pg_catalog.setval('public."Acceso_id_seq"', 12, true);
 
 
 --
--- TOC entry 2994 (class 0 OID 0)
+-- TOC entry 3007 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: Access_token_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Access_token_id_seq"', 16, true);
+SELECT pg_catalog.setval('public."Access_token_id_seq"', 18, true);
 
 
 --
--- TOC entry 2995 (class 0 OID 0)
+-- TOC entry 3008 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: Agrupacion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2515,7 +2587,7 @@ SELECT pg_catalog.setval('public."Agrupacion_id_seq"', 78, true);
 
 
 --
--- TOC entry 2996 (class 0 OID 0)
+-- TOC entry 3009 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: Asignatura_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2524,7 +2596,7 @@ SELECT pg_catalog.setval('public."Asignatura_id_seq"', 7499, true);
 
 
 --
--- TOC entry 2997 (class 0 OID 0)
+-- TOC entry 3010 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: Carrera_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2533,7 +2605,7 @@ SELECT pg_catalog.setval('public."Carrera_id_seq"', 16, true);
 
 
 --
--- TOC entry 2998 (class 0 OID 0)
+-- TOC entry 3011 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: Estado_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2542,7 +2614,7 @@ SELECT pg_catalog.setval('public."Estado_id_seq"', 5, true);
 
 
 --
--- TOC entry 2999 (class 0 OID 0)
+-- TOC entry 3012 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: Rol_acceso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2551,7 +2623,7 @@ SELECT pg_catalog.setval('public."Rol_acceso_id_seq"', 1, false);
 
 
 --
--- TOC entry 3000 (class 0 OID 0)
+-- TOC entry 3013 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: Seriacion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2560,43 +2632,52 @@ SELECT pg_catalog.setval('public."Seriacion_id_seq"', 59, true);
 
 
 --
--- TOC entry 3001 (class 0 OID 0)
+-- TOC entry 3014 (class 0 OID 0)
+-- Dependencies: 227
+-- Name: nota_mapa_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.nota_mapa_id_seq', 23, true);
+
+
+--
+-- TOC entry 3015 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: optativa_asignatura_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.optativa_asignatura_id_seq', 51, true);
+SELECT pg_catalog.setval('public.optativa_asignatura_id_seq', 75, true);
 
 
 --
--- TOC entry 3002 (class 0 OID 0)
+-- TOC entry 3016 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: optativa_categoria_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.optativa_categoria_id_seq', 7, true);
+SELECT pg_catalog.setval('public.optativa_categoria_id_seq', 15, true);
 
 
 --
--- TOC entry 3003 (class 0 OID 0)
+-- TOC entry 3017 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: optativa_container_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.optativa_container_id_seq', 1, true);
+SELECT pg_catalog.setval('public.optativa_container_id_seq', 3, true);
 
 
 --
--- TOC entry 3004 (class 0 OID 0)
+-- TOC entry 3018 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: optativa_tabla_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.optativa_tabla_id_seq', 7, true);
+SELECT pg_catalog.setval('public.optativa_tabla_id_seq', 10, true);
 
 
 --
--- TOC entry 2796 (class 2606 OID 24804)
+-- TOC entry 2804 (class 2606 OID 24804)
 -- Name: acceso Acceso_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2605,7 +2686,7 @@ ALTER TABLE ONLY public.acceso
 
 
 --
--- TOC entry 2784 (class 2606 OID 16409)
+-- TOC entry 2792 (class 2606 OID 16409)
 -- Name: agrupacion Agrupacion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2614,7 +2695,7 @@ ALTER TABLE ONLY public.agrupacion
 
 
 --
--- TOC entry 2788 (class 2606 OID 16417)
+-- TOC entry 2796 (class 2606 OID 16417)
 -- Name: asignatura Asignatura_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2623,7 +2704,7 @@ ALTER TABLE ONLY public.asignatura
 
 
 --
--- TOC entry 2782 (class 2606 OID 16401)
+-- TOC entry 2790 (class 2606 OID 16401)
 -- Name: carrera Carrera_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2632,7 +2713,7 @@ ALTER TABLE ONLY public.carrera
 
 
 --
--- TOC entry 2802 (class 2606 OID 24826)
+-- TOC entry 2810 (class 2606 OID 24826)
 -- Name: estado Estado_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2641,7 +2722,7 @@ ALTER TABLE ONLY public.estado
 
 
 --
--- TOC entry 2800 (class 2606 OID 24815)
+-- TOC entry 2808 (class 2606 OID 24815)
 -- Name: rol_acceso Rol_acceso_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2650,7 +2731,7 @@ ALTER TABLE ONLY public.rol_acceso
 
 
 --
--- TOC entry 2792 (class 2606 OID 16425)
+-- TOC entry 2800 (class 2606 OID 16425)
 -- Name: seriacion Seriacion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2659,7 +2740,7 @@ ALTER TABLE ONLY public.seriacion
 
 
 --
--- TOC entry 2786 (class 2606 OID 16435)
+-- TOC entry 2794 (class 2606 OID 16435)
 -- Name: agrupacion agrupacion_agrupacion_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2668,7 +2749,7 @@ ALTER TABLE ONLY public.agrupacion
 
 
 --
--- TOC entry 2798 (class 2606 OID 33080)
+-- TOC entry 2806 (class 2606 OID 33080)
 -- Name: acceso mail_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2677,7 +2758,16 @@ ALTER TABLE ONLY public.acceso
 
 
 --
--- TOC entry 2815 (class 2606 OID 41326)
+-- TOC entry 2825 (class 2606 OID 49586)
+-- Name: nota_mapa nota_mapa_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.nota_mapa
+    ADD CONSTRAINT nota_mapa_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2823 (class 2606 OID 41326)
 -- Name: optativa_asignatura optativa_asignatura_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2686,7 +2776,7 @@ ALTER TABLE ONLY public.optativa_asignatura
 
 
 --
--- TOC entry 2808 (class 2606 OID 41295)
+-- TOC entry 2816 (class 2606 OID 41295)
 -- Name: optativa_categoria optativa_categoria_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2695,7 +2785,7 @@ ALTER TABLE ONLY public.optativa_categoria
 
 
 --
--- TOC entry 2805 (class 2606 OID 41270)
+-- TOC entry 2813 (class 2606 OID 41270)
 -- Name: optativa_container optativa_container_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2704,7 +2794,7 @@ ALTER TABLE ONLY public.optativa_container
 
 
 --
--- TOC entry 2811 (class 2606 OID 41312)
+-- TOC entry 2819 (class 2606 OID 41312)
 -- Name: optativa_tabla optativa_tabla_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2713,7 +2803,7 @@ ALTER TABLE ONLY public.optativa_tabla
 
 
 --
--- TOC entry 2789 (class 1259 OID 16441)
+-- TOC entry 2797 (class 1259 OID 16441)
 -- Name: fki_agrupacion_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2721,7 +2811,7 @@ CREATE INDEX fki_agrupacion_fkey ON public.asignatura USING btree (agrupacion);
 
 
 --
--- TOC entry 2793 (class 1259 OID 33072)
+-- TOC entry 2801 (class 1259 OID 33072)
 -- Name: fki_asignatura_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2729,7 +2819,7 @@ CREATE INDEX fki_asignatura_fkey ON public.seriacion USING btree (asignatura);
 
 
 --
--- TOC entry 2794 (class 1259 OID 33078)
+-- TOC entry 2802 (class 1259 OID 33078)
 -- Name: fki_asignatura_seriada_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2737,7 +2827,7 @@ CREATE INDEX fki_asignatura_seriada_fkey ON public.seriacion USING btree (asigna
 
 
 --
--- TOC entry 2790 (class 1259 OID 33039)
+-- TOC entry 2798 (class 1259 OID 33039)
 -- Name: fki_carrera_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2745,7 +2835,7 @@ CREATE INDEX fki_carrera_fkey ON public.asignatura USING btree (carrera);
 
 
 --
--- TOC entry 2806 (class 1259 OID 41301)
+-- TOC entry 2814 (class 1259 OID 41301)
 -- Name: fki_categoria_container_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2753,7 +2843,7 @@ CREATE INDEX fki_categoria_container_fkey ON public.optativa_categoria USING btr
 
 
 --
--- TOC entry 2803 (class 1259 OID 41284)
+-- TOC entry 2811 (class 1259 OID 41284)
 -- Name: fki_container_carrera_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2761,7 +2851,7 @@ CREATE INDEX fki_container_carrera_fkey ON public.optativa_container USING btree
 
 
 --
--- TOC entry 2812 (class 1259 OID 41338)
+-- TOC entry 2820 (class 1259 OID 41338)
 -- Name: fki_optativa_asigantura_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2769,7 +2859,7 @@ CREATE INDEX fki_optativa_asigantura_fkey ON public.optativa_asignatura USING bt
 
 
 --
--- TOC entry 2813 (class 1259 OID 41332)
+-- TOC entry 2821 (class 1259 OID 41332)
 -- Name: fki_optativa_tabla_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2777,7 +2867,7 @@ CREATE INDEX fki_optativa_tabla_fkey ON public.optativa_asignatura USING btree (
 
 
 --
--- TOC entry 2809 (class 1259 OID 41318)
+-- TOC entry 2817 (class 1259 OID 41318)
 -- Name: fki_tabla_categoria_fkey; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2785,7 +2875,7 @@ CREATE INDEX fki_tabla_categoria_fkey ON public.optativa_tabla USING btree (cate
 
 
 --
--- TOC entry 2816 (class 2606 OID 16436)
+-- TOC entry 2826 (class 2606 OID 16436)
 -- Name: asignatura agrupacion_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2794,7 +2884,7 @@ ALTER TABLE ONLY public.asignatura
 
 
 --
--- TOC entry 2818 (class 2606 OID 33067)
+-- TOC entry 2828 (class 2606 OID 33067)
 -- Name: seriacion asignatura_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2803,7 +2893,7 @@ ALTER TABLE ONLY public.seriacion
 
 
 --
--- TOC entry 2819 (class 2606 OID 33073)
+-- TOC entry 2829 (class 2606 OID 33073)
 -- Name: seriacion asignatura_seriada_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2812,7 +2902,7 @@ ALTER TABLE ONLY public.seriacion
 
 
 --
--- TOC entry 2817 (class 2606 OID 33062)
+-- TOC entry 2827 (class 2606 OID 33062)
 -- Name: asignatura carrera_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2821,8 +2911,8 @@ ALTER TABLE ONLY public.asignatura
 
 
 --
--- TOC entry 3005 (class 0 OID 0)
--- Dependencies: 2817
+-- TOC entry 3019 (class 0 OID 0)
+-- Dependencies: 2827
 -- Name: CONSTRAINT carrera_fkey ON asignatura; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2830,7 +2920,7 @@ COMMENT ON CONSTRAINT carrera_fkey ON public.asignatura IS 'llave foranea al id 
 
 
 --
--- TOC entry 2820 (class 2606 OID 41274)
+-- TOC entry 2830 (class 2606 OID 41274)
 -- Name: optativa_container carrera_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2839,7 +2929,7 @@ ALTER TABLE ONLY public.optativa_container
 
 
 --
--- TOC entry 2822 (class 2606 OID 41296)
+-- TOC entry 2832 (class 2606 OID 41296)
 -- Name: optativa_categoria categoria_container_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2848,7 +2938,7 @@ ALTER TABLE ONLY public.optativa_categoria
 
 
 --
--- TOC entry 2821 (class 2606 OID 41279)
+-- TOC entry 2831 (class 2606 OID 41279)
 -- Name: optativa_container container_carrera_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2857,7 +2947,7 @@ ALTER TABLE ONLY public.optativa_container
 
 
 --
--- TOC entry 2825 (class 2606 OID 41333)
+-- TOC entry 2835 (class 2606 OID 41333)
 -- Name: optativa_asignatura optativa_asigantura_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2866,7 +2956,7 @@ ALTER TABLE ONLY public.optativa_asignatura
 
 
 --
--- TOC entry 2824 (class 2606 OID 41327)
+-- TOC entry 2834 (class 2606 OID 41327)
 -- Name: optativa_asignatura optativa_tabla_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2875,7 +2965,7 @@ ALTER TABLE ONLY public.optativa_asignatura
 
 
 --
--- TOC entry 2823 (class 2606 OID 41313)
+-- TOC entry 2833 (class 2606 OID 41313)
 -- Name: optativa_tabla tabla_categoria_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2883,7 +2973,7 @@ ALTER TABLE ONLY public.optativa_tabla
     ADD CONSTRAINT tabla_categoria_fkey FOREIGN KEY (categoria) REFERENCES public.optativa_categoria(id) NOT VALID;
 
 
--- Completed on 2021-11-18 19:07:41
+-- Completed on 2022-02-21 00:06:29
 
 --
 -- PostgreSQL database dump complete

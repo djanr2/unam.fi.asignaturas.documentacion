@@ -1,0 +1,1911 @@
+{
+	"info": {
+		"_postman_id": "9768004a-ca66-426b-ae9c-5e5f259a7ed2",
+		"name": "asignaturas.fi.unam.api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LoginController",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mail\":\"djanr2@gmail.com\", \"password\":\"qwert\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "Generará un registro en la tabla Acceso_token con la Información del usuario, para futuros request"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"Ojpv38IxNXiPZ7RAUTjD7qEcmWlIbXlpLUmxBy8HPLX4nsMH3tal4HGoA8NbDtO68F87DI6mt3y6ePdL3n7JTxZMhhOttpMMaiU4tfiUBsnk0Wxx6pTyoWPlgq9UK8LYGOf4/EAQ75hxwta2Om53WPM0RKa83lwvD8q7NhvGABf6kKINMqrX45byJG131f/U8K7J01PMsMzdVb0U8FsbyBjMqDg1VhjsFhw678V+zoDYMTQNYxBXRvOU35yX+JLVDgyr4O/4JNpxGk0YacLemRtqfeGkq/V6FxsEjxstQ7UyRe31YbwlvBfReJ9on7Wn2p+OP8DA2Z9KX18cBlOl3e7mdOz/bhJihAGsdwwG5sQjWog8SpNtJk7OgNkvPh2uayFFUvSdVvC0B+IA9yqS5IqRGNuohpwFS3hoA2/QDU3IZ8T1xYc+9OwREti4jFy0audWeeClJP17YzCwjsZqdA==\"}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"logout"
+							]
+						},
+						"description": "Caducará el registro del token actual en la tabla Acceso_token, para que futuros request sean rechazados."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LogupController",
+			"item": [
+				{
+					"name": "logup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"acceso\":{\"usuario\":\"djanr2\", \"mail\":\"djanr2@gmail.com\", \"password_ciphed\":\"12345\", \"rol\":\"visual\", \"estado\":\"activo\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/logup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"logup"
+							]
+						},
+						"description": "Inserta un nuevo registro en la tabla Acceso con el password cifrado con el algoritmo sha256."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RolAccesoController",
+			"item": [
+				{
+					"name": "getRol",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"S7Bl7lyCEw2zbOA13fa76GDtFdmFmJeScX4HdRkmmmFmiqoeFVnMOFIhu6kc/bvyaiKZQKQ2MlMsrRe6IAp7NketsEaBycOHplkabpbKrvE2RAbe4fXtZ2iE3g+RucVXkRyiQnXchYQ9LGUFOO8FFL7PbuFGX7Wc5pnCB4JnKesfdf5ErBzmVGucFa958FFvvAHJRQGbFoilMoPjav0XNHxaMN589X0qEvbaFN1KL7tGRGFIqDLfEgkC3QLHvRXtCdTDnjRccsJCR5eUqIOnCjBVPKZk83yXyLWjI6zZOrS4E+9PGdWAxJnQHgEi8xmyL9XwnSspOdxf/SAwuNUWn98a+e0yzdjqu2XVL5gaFiMvbpeiMXPP7Y8aXQzh5WqjigTcOcpPZ/OHTUIqrXWeyuIVs7sOYx0FDqbhse3eay5zq/+crhJ+XRcynP2ZNmL6co69EvlmabnzcyyhWmSBIQ==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/rol",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"rol"
+							]
+						},
+						"description": "Obtendrá todos los registros de la tabla Rol_acceso, obtenidos en formato .json"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EstadoAccesoController",
+			"item": [
+				{
+					"name": "getEstadoById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"S7Bl7lyCEw2zbOA13fa76GDtFdmFmJeScX4HdRkmmmFmiqoeFVnMOFIhu6kc/bvyaiKZQKQ2MlMsrRe6IAp7NketsEaBycOHplkabpbKrvE2RAbe4fXtZ2iE3g+RucVXkRyiQnXchYQ9LGUFOO8FFL7PbuFGX7Wc5pnCB4JnKesfdf5ErBzmVGucFa958FFvvAHJRQGbFoilMoPjav0XNHxaMN589X0qEvbaFN1KL7tGRGFIqDLfEgkC3QLHvRXtCdTDnjRccsJCR5eUqIOnCjBVPKZk83yXyLWjI6zZOrS4E+9PGdWAxJnQHgEi8xmyL9XwnSspOdxf/SAwuNUWn98a+e0yzdjqu2XVL5gaFiMvbpeiMXPP7Y8aXQzh5WqjigTcOcpPZ/OHTUIqrXWeyuIVs7sOYx0FDqbhse3eay5zq/+crhJ+XRcynP2ZNmL6co69EvlmabnzcyyhWmSBIQ==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/estado/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"estado",
+								"3"
+							]
+						},
+						"description": "Obtendrá el registro especificado mediante el parámetro {id} de la tabla Estado, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "getEstados",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"S7Bl7lyCEw2zbOA13fa76GDtFdmFmJeScX4HdRkmmmFmiqoeFVnMOFIhu6kc/bvyaiKZQKQ2MlMsrRe6IAp7NketsEaBycOHplkabpbKrvE2RAbe4fXtZ2iE3g+RucVXkRyiQnXchYQ9LGUFOO8FFL7PbuFGX7Wc5pnCB4JnKesfdf5ErBzmVGucFa958FFvvAHJRQGbFoilMoPjav0XNHxaMN589X0qEvbaFN1KL7tGRGFIqDLfEgkC3QLHvRXtCdTDnjRccsJCR5eUqIOnCjBVPKZk83yXyLWjI6zZOrS4E+9PGdWAxJnQHgEi8xmyL9XwnSspOdxf/SAwuNUWn98a+e0yzdjqu2XVL5gaFiMvbpeiMXPP7Y8aXQzh5WqjigTcOcpPZ/OHTUIqrXWeyuIVs7sOYx0FDqbhse3eay5zq/+crhJ+XRcynP2ZNmL6co69EvlmabnzcyyhWmSBIQ==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"estados"
+							]
+						},
+						"description": "Obtendrá todos los registros de la tabla Estado, obtenidos en formato .json"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AccesoController",
+			"item": [
+				{
+					"name": "getUsuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"S7Bl7lyCEw2zbOA13fa76GDtFdmFmJeScX4HdRkmmmFmiqoeFVnMOFIhu6kc/bvyaiKZQKQ2MlMsrRe6IAp7NketsEaBycOHplkabpbKrvE2RAbe4fXtZ2iE3g+RucVXkRyiQnXchYQ9LGUFOO8FFL7PbuFGX7Wc5pnCB4JnKesfdf5ErBzmVGucFa958FFvvAHJRQGbFoilMoPjav0XNHxaMN589X0qEvbaFN1KL7tGRGFIqDLfEgkC3QLHvRXtCdTDnjRccsJCR5eUqIOnCjBVPKZk83yXyLWjI6zZOrS4E+9PGdWAxJnQHgEi8xmyL9XwnSspOdxf/SAwuNUWn98a+e0yzdjqu2XVL5gaFiMvbpeiMXPP7Y8aXQzh5WqjigTcOcpPZ/OHTUIqrXWeyuIVs7sOYx0FDqbhse3eay5zq/+crhJ+XRcynP2ZNmL6co69EvlmabnzcyyhWmSBIQ==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "Obtendrá todos los registros de la tabla Acceso, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "getUsuarioById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"S7Bl7lyCEw2zbOA13fa76GDtFdmFmJeScX4HdRkmmmFmiqoeFVnMOFIhu6kc/bvyaiKZQKQ2MlMsrRe6IAp7NketsEaBycOHplkabpbKrvE2RAbe4fXtZ2iE3g+RucVXkRyiQnXchYQ9LGUFOO8FFL7PbuFGX7Wc5pnCB4JnKesfdf5ErBzmVGucFa958FFvvAHJRQGbFoilMoPjav0XNHxaMN589X0qEvbaFN1KL7tGRGFIqDLfEgkC3QLHvRXtCdTDnjRccsJCR5eUqIOnCjBVPKZk83yXyLWjI6zZOrS4E+9PGdWAxJnQHgEi8xmyL9XwnSspOdxf/SAwuNUWn98a+e0yzdjqu2XVL5gaFiMvbpeiMXPP7Y8aXQzh5WqjigTcOcpPZ/OHTUIqrXWeyuIVs7sOYx0FDqbhse3eay5zq/+crhJ+XRcynP2ZNmL6co69EvlmabnzcyyhWmSBIQ==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/usuario/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"usuario",
+								"7"
+							]
+						},
+						"description": "Obtendrá el registro especificado mediante el parámetro {id} de la tabla Acceso, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "patchAcceso",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"acceso\":{\"usuario\":\"djanr2\", \"mail\":\"djanr2@comunidad.unam.mx\", \"password_ciphed\":\"qwert\", \"rol\":\"root\", \"estado\":\"activo\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/usuario/10?new_pass=qwert&confirm_pass=qwert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"usuario",
+								"10"
+							],
+							"query": [
+								{
+									"key": "new_pass",
+									"value": "qwert"
+								},
+								{
+									"key": "confirm_pass",
+									"value": "qwert"
+								}
+							]
+						},
+						"description": "Actualizará la información del registro especificado mediante el parámetro {id} registro de la tabla Acceso"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAcceso",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/usuario/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"usuario",
+								"8"
+							]
+						},
+						"description": "Eliminará el registro especificado mediante el parámetro {id} de la tabla Acceso"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AgrupacionController",
+			"item": [
+				{
+					"name": "getAgrupaciones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/agrupacion/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"agrupacion",
+								"1"
+							]
+						},
+						"description": "Obtendrá todos los registros de la tabla Agrupacion, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "postAgrupacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"agrupacion\":{\"agrupacion\":\"NUEVAAGRUPACION\",\"nombre\":\"nueva agrupacion\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/agrupacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"agrupacion"
+							]
+						},
+						"description": "Insertará un registro de tipo agrupacion en la tabla Agrupacion"
+					},
+					"response": []
+				},
+				{
+					"name": "patchAgrupacion",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"agrupacion\":{\"agrupacion\":\"NUEVAs2\",\"nombre\":\"nueva agrupacion\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/agrupacion/73",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"agrupacion",
+								"73"
+							]
+						},
+						"description": "Actualizará la información del registro especificado mediante el parámetro {id} registro de la tabla Agrupacion"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAgrupacion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/agrupacion/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"agrupacion",
+								"1"
+							]
+						},
+						"description": "Eliminará el registro especificado mediante el parámetro {id} de la tabla Agrupacion"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SeriacionController",
+			"item": [
+				{
+					"name": "getSeriacionById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/seriacion/24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"seriacion",
+								"24"
+							]
+						},
+						"description": "Obtendrá el registro especificado mediante el parámetro {id} de la tabla Seriacion, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "postSeriacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"seriaciones\":[{\"carrera\":\"1\",\"asignatura\":\"57\",\"asignatura_seriada\":\"62\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"58\",\"asignatura_seriada\":\"63\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"58\",\"asignatura_seriada\":\"64\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"63\",\"asignatura_seriada\":\"115\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"63\",\"asignatura_seriada\":\"116\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"64\",\"asignatura_seriada\":\"117\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"64\",\"asignatura_seriada\":\"118\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"115\",\"asignatura_seriada\":\"122\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"117\",\"asignatura_seriada\":\"129\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"118\",\"asignatura_seriada\":\"124\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"119\",\"asignatura_seriada\":\"125\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"121\",\"asignatura_seriada\":\"134\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"121\",\"asignatura_seriada\":\"137\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"123\",\"asignatura_seriada\":\"130\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"124\",\"asignatura_seriada\":\"131\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"125\",\"asignatura_seriada\":\"132\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"128\",\"asignatura_seriada\":\"134\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"129\",\"asignatura_seriada\":\"135\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"129\",\"asignatura_seriada\":\"141\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"130\",\"asignatura_seriada\":\"136\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"132\",\"asignatura_seriada\":\"144\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"133\",\"asignatura_seriada\":\"140\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"134\",\"asignatura_seriada\":\"140\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"137\",\"asignatura_seriada\":\"151\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"137\",\"asignatura_seriada\":\"147\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"140\",\"asignatura_seriada\":\"187\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"140\",\"asignatura_seriada\":\"174\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"141\",\"asignatura_seriada\":\"175\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"142\",\"asignatura_seriada\":\"148\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"143\",\"asignatura_seriada\":\"149\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"144\",\"asignatura_seriada\":\"150\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"147\",\"asignatura_seriada\":\"175\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"148\",\"asignatura_seriada\":\"176\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"150\",\"asignatura_seriada\":\"188\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"151\",\"asignatura_seriada\":\"187\", \"color\":\"BLACK\"},{\"carrera\":\"1\",\"asignatura\":\"187\",\"asignatura_seriada\":\"191\", \"color\":\"BLACK\"}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/seriacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"seriacion"
+							]
+						},
+						"description": "Insertará un registro de tipo seriación en la tabla Seriación"
+					},
+					"response": []
+				},
+				{
+					"name": "getSeriacionByYearAndCarrera",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/seriacion/2016/110",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"seriacion",
+								"2016",
+								"110"
+							]
+						},
+						"description": "Obtendrá los registros especificado mediante los parámetros {year} y {carrera} de la tabla Seriacion, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "getSeriacionByYearAndCarreraAndAsignatura",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/seriacion/2016/110/1121",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"seriacion",
+								"2016",
+								"110",
+								"1121"
+							]
+						},
+						"description": "Obtendrá los registros especificado mediante los parámetros {year}, {carrera} y {asignatura} de la tabla Seriacion, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "patchSeriacion",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"seriacion\":{\"carrera\":\"4\",\"asignatura\":\"6192\",\"asignatura_seriada\":\"6197\", \"color\":\"BLACK\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/seriacion/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"seriacion",
+								"1"
+							]
+						},
+						"description": "Actualizará la información del registro especificado mediante el parámetro {id} registro de la tabla Seriación"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSeriacion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgkOlzl82ba4cXUzn9hf4E6PA28jAeOfUGtiUYlHqPv+ZDDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY8/sX+tWtJnQ7xdFxR5ao3CX3TxriC7TI/rblZPSgvVtQ==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/seriacion/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"seriacion",
+								"6"
+							]
+						},
+						"description": "Eliminará el registro especificado mediante el parámetro {id} de la tabla Seriación"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CarreraController",
+			"item": [
+				{
+					"name": "getCarreras",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carreras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carreras"
+							]
+						},
+						"description": "Obtendrá todos los registros de la tabla Carrera, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "getCarreraById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carrera/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrera",
+								"2"
+							]
+						},
+						"description": "Obtendrá el registro especificado mediante el parámetro {id} de la tabla Carrera, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "getCarreraByYearAndClave",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carrera/2013/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrera",
+								"2013",
+								"1"
+							]
+						},
+						"description": "Obtendrá el registro especificado mediante los parametros {year}, {clave} de la tabla Carrera, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "postCarrera",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"carrera\":{\"clave\":\"666\",\"nombre\":\"INGENIERIA NUEVA\",\"year\":\"2021\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/carrera",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"carrera"
+							]
+						},
+						"description": "Insertará un registro de tipo carrera en la tabla Carrera"
+					},
+					"response": []
+				},
+				{
+					"name": "patchCarrera",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"carrera\":{\"clave\":\"137\",\"nombre\":\"Ingeniería Ambiental\",\"year\":\"2016\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/carrera/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"carrera",
+								"14"
+							]
+						},
+						"description": "Actualizará la información del registro especificado mediante el parámetro {id} registro de la tabla Carrera"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCarrera",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/carrera/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"carrera",
+								"14"
+							]
+						},
+						"description": "Eliminará el registro especificado mediante el parámetro {id} de la tabla Carrera"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AsignaturaController",
+			"item": [
+				{
+					"name": "getAsignaturasByYearAndCarrera",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/asignaturas/2016/110",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"asignaturas",
+								"2016",
+								"110"
+							]
+						},
+						"description": "Obtendrá los registros de la tabla Asignatuara con base en los parámetros {year} y {carrera}, obtenidos en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "getAsignaturasByYearAndCarreraAndClave",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/asignatura/2016/110/1120",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"asignatura",
+								"2016",
+								"110",
+								"1120"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAsignaturasById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/asignatura/57",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"asignatura",
+								"57"
+							]
+						},
+						"description": "Obtendrá el registro de la tabla Asignatuara con base en el parametro {id}, obtenido en formato .json"
+					},
+					"response": []
+				},
+				{
+					"name": "postAsignatura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgkOlzl82ba4cXUzn9hf4E6PA28jAeOfUGtiUYlHqPv+ZDDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY8/sX+tWtJnQ7xdFxR5ao3CX3TxriC7TI/rblZPSgvVtQ==\", \"asignatura\":{\"clave\": 9999,\"carrera\": 1,\"nombre\": \"Álgebra\",\"horas_practicas\": 0,\"horas_teoricas\": 4,\"semestre\": \"1\",\"orden\": 1,\"nota\": \" \",\"optativa\": \" \",\"agrupacion\": \"AMARILLO\",\"tamano\": 1,\"enlace_pdf\": \" \"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/asignatura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"asignatura"
+							]
+						},
+						"description": "Insertará un registro de tipo asignatura en la tabla Asignatura"
+					},
+					"response": []
+				},
+				{
+					"name": "patchAsignatura",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgkOlzl82ba4cXUzn9hf4E6PA28jAeOfUGtiUYlHqPv+ZDDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY8/sX+tWtJnQ7xdFxR5ao3CX3TxriC7TI/rblZPSgvVtQ==\", \"asignatura\":{\"clave\": 8888,\"carrera\": 1,\"nombre\": \"Álgebra\",\"horas_practicas\": 0,\"horas_teoricas\": 4,\"semestre\": \"1\",\"orden\": 1,\"nota\": \" \",\"optativa\": \" \",\"agrupacion\": \"AMARILLO\",\"tamano\": 1,\"enlace_pdf\": \" \"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/asignatura/7300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"asignatura",
+								"7300"
+							]
+						},
+						"description": "Actualizará la información del registro especificado mediante el parámetro {id} registro de la tabla Carrera"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAsignatura",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgkOlzl82ba4cXUzn9hf4E6PA28jAeOfUGtiUYlHqPv+ZDDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY8/sX+tWtJnQ7xdFxR5ao3CX3TxriC7TI/rblZPSgvVtQ==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/asignatura/7301",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"asignatura",
+								"7301"
+							]
+						},
+						"description": "Eliminará el registro especificado mediante el parámetro {id} de la tabla Carrera"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MapaCurricularController",
+			"item": [
+				{
+					"name": "getMapaCurricular",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/mapa/curricular/2016/107",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mapa",
+								"curricular",
+								"2016",
+								"107"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InfoMapaCurricularController",
+			"item": [
+				{
+					"name": "getInfoMapaCurricular",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/info/mapa/curricular/2016/107",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"info",
+								"mapa",
+								"curricular",
+								"2016",
+								"107"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NotasMapaController",
+			"item": [
+				{
+					"name": "getNotaByYearAndCarrera",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nota/2016/107",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nota",
+								"2016",
+								"107"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNotasById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nota/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nota",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postNotas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"notas\":[{\"carrera\":\"1\",\"orden\":\"6\",\"simbolo\":\"*\", \"leyenda\":\"Test Nota Insert 1\"},{\"carrera\":\"1\",\"orden\":\"7\",\"simbolo\":\"**\", \"leyenda\":\"Test Nota Insert 2\"}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/nota/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"nota",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchNota",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"nota\":{\"carrera\":\"1\",\"orden\":\"20\",\"simbolo\":\"***\", \"leyenda\":\"Nota Update\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/nota/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"nota",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteNota",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgkOlzl82ba4cXUzn9hf4E6PA28jAeOfUGtiUYlHqPv+ZDDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY8/sX+tWtJnQ7xdFxR5ao3CX3TxriC7TI/rblZPSgvVtQ==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/nota/23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"nota",
+								"23"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OptativaContainerController",
+			"item": [
+				{
+					"name": "getOptativaContainerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/optativa/container/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"optativa",
+								"container",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOptativaContainerByCarrera",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/optativa/container/2016/107",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"optativa",
+								"container",
+								"2016",
+								"107"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postContainer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"containers\":[{\"carrera\":2,\"orden\":1,\"titulo\":\"AsignaturasOptativas\",\"nota_head\":\"\",\"nota_foot\":\"*Semestre(s)recomendado(s)\"},{\"carrera\":3,\"orden\":1,\"titulo\":\"AsignaturasOptativas\",\"nota_head\":\"\",\"nota_foot\":\"*Semestre(s)recomendado(s)\"}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/container",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"container"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchContainer",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"container\":{\"carrera\":4,\"orden\":2,\"titulo\":\"AsignaturasOptativas\",\"nota_head\":\"\",\"nota_foot\":\"*Semestre(s)recomendado(s)\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/container/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"container",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteContainer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/container/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"container",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OptativaCategoriaController",
+			"item": [
+				{
+					"name": "getOptativaCategoriaById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/optativa/categoria/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"optativa",
+								"categoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOptativaCategoriaContainer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/optativa/container/4/categoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"optativa",
+								"container",
+								"4",
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postCategoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"categorias\":[{\"container\":2,\"orden\":1,\"titulo\":\"OptativasdeCienciasSocialesyHumanidades\",\"nota_head\":\"\",\"nota_foot\":\"\"},{\"container\":2,\"orden\":1,\"titulo\":\"OptativasdeCienciasSocialesyHumanidades\",\"nota_head\":\"\",\"nota_foot\":\"\"}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/categoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchCategoria",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\", \"categoria\":{\"container\":2,\"orden\":1,\"titulo\":\"Update Categoria\",\"nota_head\":\"\",\"nota_foot\":\"patch\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/categoria/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"categoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/categoria/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"categoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OptativaTablaController",
+			"item": [
+				{
+					"name": "getOptativaTablaById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/optativa/tabla/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"optativa",
+								"tabla",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOptativaTablaCategoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/optativa/container/categoria/2/tabla",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"optativa",
+								"container",
+								"categoria",
+								"2",
+								"tabla"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postTabla",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"tablas\":[{\"categoria\":5,\"orden\":1,\"titulo\":\"testpost\",\"nota_head\":\"\",\"nota_foot\":\"\"},{\"categoria\":5,\"orden\":1,\"titulo\":\"testpost2\",\"nota_head\":\"\",\"nota_foot\":\"\"}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/tabla",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"tabla"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchTabla",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"tabla\":{\"id\":2,\"categoria\":2,\"orden\":1,\"titulo\":\"\",\"nota_head\":\"update\",\"nota_foot\":\"update\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/tabla/32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"tabla",
+								"32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTabla",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/tabla/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"tabla",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OptativaAsignaturaController",
+			"item": [
+				{
+					"name": "getOptativaAsignaturaById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/optativa/container/categoria/tabla/2/asignatura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"optativa",
+								"container",
+								"categoria",
+								"tabla",
+								"2",
+								"asignatura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOptativaAsignaturaTabla",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/optativa/container/categoria/2/tabla",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"optativa",
+								"container",
+								"categoria",
+								"2",
+								"tabla"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postAsignatura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"asignaturas\":[{\"tabla\":2,\"asignatura\":{\"id\":5955}},{\"tabla\":2,\"asignatura\":{\"id\":5955}}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/asignatura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"asignatura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchAsignatura",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\",\"asignatura\":{\"tabla\":2,\"asignatura\":{\"id\":5955}}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/asignatura/52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"asignatura",
+								"52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAsignatura",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"token\":\"cPg3wk87KJjwIqJjckoQX4U5+kgyqfNUweMpvL99IgncMSADAY9OhnJZG2c+BfqeJ3nz4ICQ4SJHqs16r67a6TDwfbITc8lDQVxNlSEk01fqNNQEzVrocOGmKMwLEv1qvDQcTJqvJYfeBL8jn9z1TEkUtIUJmR2nYnBTmCceldyx1B+e+MwTkYZ4LqgNGM3uhZN4rRpFme7Km/F36I5+wFbequ+3UsUHOxvLq0tj3wZ/r9Lxe+rBBRnGpUFulUKbHWxr1iNfJHubd9muGMOLCG+w/0SPFM0uxQ8lmP7hTPJGzpL+McWZXx951xm/Yy/sO0ymmr7wD6FcFGXen5L6ttMCdIAcK9comrNbfd2CT9myTAlOpTUGzRfY8aKj7BmCo1No9o6CJh6DfSttBinVQvSWv51xfm2ZVkyxvN6ZQY+tsOny/PJiwzKE6U2Lm4Uv5SxK7lL2tCWMDo8LIoAThw==\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/api/optativa/asignatura/66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"api",
+								"optativa",
+								"asignatura",
+								"66"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
