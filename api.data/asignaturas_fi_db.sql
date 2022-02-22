@@ -5,7 +5,7 @@
 -- Dumped from database version 12.1
 -- Dumped by pg_dump version 12.1
 
--- Started on 2022-02-21 00:06:28
+-- Started on 2022-02-22 00:07:13
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -952,7 +952,6 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 6103	1822	3	Circuitos Integrados Analógicos	2.0	4.0	8	5	L+		AZUL	1		#0000ff
 6421	2817	6	Prospección Sísmica II	0.0	4.0	8	2			AZUL	1		#0000ff
 6426	2966	6	Inersion de Datos Geofísicos	0.0	4.0	9	2			AZUL	1		#0000ff
-189	0	1	Se deberán cursar al menos 18 creditos optativos de una de las seis áreas	18.0	0.0	10	2		OPT_1	AZUL	2		#0000ff
 6044	0	2	Optativa	0.0	4.0	10	3		OPT_1	AZUL	1		#0000ff
 6045	0	2	Optativa	0.0	4.0	10	4		OPT_1	AZUL	1		#0000ff
 6104	0	3	Asignatura del Campo de Profundización	0.0	4.0	9	1		OPT_1	AZUL	1		#0000ff
@@ -969,7 +968,8 @@ COPY public.asignatura (id, clave, carrera, nombre, horas_practicas, horas_teori
 6229	0	4	Optativa(s) de Ciencias Sociales y Humanidades	2.0	2.0	8	1		OPT_1	VERDE	1		#32cd32
 152	0	1	Optativa de Ciencias Sociales y Humanidades	0.0	2.0	8	7		OPT_1	VERDE	1		#32cd32
 133	1413	1	Introducción a la Economía	0.0	4.0	5	6			VERDE	1		#32cd32
-190	0	1	Se deberán cursar al menos 12 creditos optativos de una o dos de las cinco áreas restantes	12.0	0.0	10	3		OPT_1	AZUL	2		#0000ff
+189	0	1	Se deberán cursar al menos 18 creditos optativos de una de las seis áreas	0.0	9.0	10	2		OPT_1	AZUL	2		#0000ff
+190	0	1	Se deberán cursar al menos 12 creditos optativos de una o dos de las cinco áreas restantes	0.0	6.0	10	3		OPT_1	AZUL	2		#0000ff
 7135	1786	13	Planeación y Control de Recursos Hospitalarios	2.0	4.0	8	8	L	OPT	BIOMECANICA_SB	0		
 7136	1699	13	Sistemas de Medición y Transductores Médicos	2.0	4.0	8	9	L	OPT	BIOMECANICA_SB	0		
 6348	2305	5	Temas Selectos de Normalización y Desarrollo Industrial	0.0	3.0	8, 9	6		OPT	ESPACIALES	0		
@@ -2973,7 +2973,7 @@ ALTER TABLE ONLY public.optativa_tabla
     ADD CONSTRAINT tabla_categoria_fkey FOREIGN KEY (categoria) REFERENCES public.optativa_categoria(id) NOT VALID;
 
 
--- Completed on 2022-02-21 00:06:29
+-- Completed on 2022-02-22 00:07:14
 
 --
 -- PostgreSQL database dump complete
