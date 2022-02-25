@@ -277,6 +277,22 @@
 											"top": 455,
 											"width": 308.24072265625,
 											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAF/Lr8PtSBL5DM=",
+											"_parent": {
+												"$ref": "AAAAAAF1tIKPiumKzos="
+											},
+											"model": {
+												"$ref": "AAAAAAF/Lr8PjyBIZUI="
+											},
+											"fillColor": "#6dff6d",
+											"font": "Arial;13;0",
+											"left": 117,
+											"top": 470,
+											"width": 308.24072265625,
+											"height": 13
 										}
 									],
 									"fillColor": "#6dff6d",
@@ -284,7 +300,7 @@
 									"left": 112,
 									"top": 255,
 									"width": 318.24072265625,
-									"height": 218
+									"height": 233
 								}
 							],
 							"fillColor": "#6dff6d",
@@ -292,7 +308,7 @@
 							"left": 112,
 							"top": 232,
 							"width": 318.24072265625,
-							"height": 241,
+							"height": 256,
 							"nameLabel": {
 								"$ref": "AAAAAAF1tIKPiumJc0Q="
 							},
@@ -1932,7 +1948,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 267,
-									"top": 511,
+									"top": 518,
 									"width": 7,
 									"height": 13,
 									"alpha": 0.9505469513770257,
@@ -1951,7 +1967,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 268,
-									"top": 491,
+									"top": 506,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -1987,7 +2003,7 @@
 								"$ref": "AAAAAAF1tIKPiumI8Iw="
 							},
 							"lineStyle": 2,
-							"points": "256:472;256:544",
+							"points": "256:487;256:544",
 							"nameLabel": {
 								"$ref": "AAAAAAF7e88GYMTQIC4="
 							},
@@ -2188,9 +2204,9 @@
 										"$ref": "AAAAAAF+vNHCcg/LLic="
 									},
 									"font": "Arial;13;0",
-									"left": 916,
+									"left": 915,
 									"top": 375,
-									"width": 5.05908203125,
+									"width": 7,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -3267,6 +3283,16 @@
 								"$ref": "AAAAAAF1tIKPiemGYbY="
 							},
 							"name": "color",
+							"type": "CHARACTER VARYNG",
+							"length": "25"
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAF/Lr8PjyBIZUI=",
+							"_parent": {
+								"$ref": "AAAAAAF1tIKPiemGYbY="
+							},
+							"name": "color_text",
 							"type": "CHARACTER VARYNG",
 							"length": "25"
 						}
